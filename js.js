@@ -32,39 +32,33 @@ function notify(msg) {
 }
 
 function addAlarm() {
-
-  try {
   
-    var br = document.createElement("br");
+  var br = document.createElement("br");
 
-    var input = document.createElement("input");
-    input.type = "time";
-    input.className = "input alarm";
-    input.id = "alarm" + iAlarm;
+  var input = document.createElement("input");
+  input.type = "time";
+  input.className = "input alarm";
+  input.id = "alarm" + iAlarm;
 
-    var del = document.createElement("input");
-    del.type = "button";
-    del.className = "delete";
-    del.value = "X";
-    del.id = "delete" + iAlarm;
+  var del = document.createElement("input");
+  del.type = "button";
+  del.className = "delete";
+  del.value = "X";
+  del.id = "delete" + iAlarm;
 
-    del.onclick = function(){
-      alarmsDiv.removeChild(input);
-      alarmsDiv.removeChild(del);
-      alarmsDiv.removeChild(br);
-    };
+  del.onclick = function(){
+    alarmsDiv.removeChild(input);
+    alarmsDiv.removeChild(del);
+    alarmsDiv.removeChild(br);
+  };
 
-    alarmsDiv.appendChild(input);
-    alarmsDiv.appendChild(del);
-    alarmsDiv.appendChild(br);
+  alarmsDiv.appendChild(input);
+  alarmsDiv.appendChild(del);
+  alarmsDiv.appendChild(br);
 
-    iAlarm++;
+  iAlarm++;
 
-    askPermission();
-    
-  } throw {
-    document.write("Navegador incompatível");
-  }
+  askPermission();
 
 }
 
@@ -196,6 +190,10 @@ function startStop() {
   }
 }
 
-setInterval(update, 1000);
-addAlarm();
-addTimer();
+try {
+  addAlarm();
+  addTimer();
+  setInterval(update, 1000);
+} throw {
+  document.write("Navegador incompatível");
+}
