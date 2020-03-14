@@ -194,6 +194,6 @@ try {
   addAlarm();
   addTimer();
   setInterval(update, 1000);
-} throw {
+} catch (e) {
   document.write("Navegador incompatível");
 }
