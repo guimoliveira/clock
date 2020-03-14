@@ -1,2 +1,2 @@
-# clock
-Relógio, alarme, temporizador e cronômetro. Com notificações. ⏰
+# Relógio ⏰
+Relógio, alarme, temporizador e cronômetro. Com notificações.
